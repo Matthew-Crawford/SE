@@ -1,0 +1,119 @@
+243 Puzzle Solver, Project Part 3:  Water, Clock, Chess, Jam
+
+Your Name: Matthew Crawford
+Your chosen new puzzle (Chess or Jam): Chess
+
+Teammate Name:Group T
+
+
+A. DESIGN
+---------
+
+1. Explain, in detail, the design of your new puzzle, and how it "connects"
+to your common solver.
+
+I have a ChessPiece class that is an abstract class that all individual pieces extend, I have 
+a ChessBoard which represents the configuration of a board, and I have a chess class that 
+extends my abstract Puzzle class and executes the program by creating a solver object and takes in 
+a chess object, giving it access to all of the necessary functions.
+
+
+
+
+
+
+2. What changes did you need to make to your existing design for part 2?
+Originally we had a solver that did not use memoization at all, and because there were so many
+possible configurations, redesigning it with memoization was an important step. We created a hashmap
+that mapped a neighbor to the current, and the neighbor could only be added to the queue if it
+was not already in the map. I did not notice, however, that added the hashmap was not enough
+to complete the memoization. I needed to override hashcode and equals for my jug class because
+the default hash compared their address in memory, so no two configs would be alike, and so my
+hashmap ran out of heapspace when running big tests. I implmented the new hashcode function in jug.java
+and ChessBoard.java, as they were my two configs for the two parts.
+
+
+
+
+
+
+
+
+3. Did you and your partner work together on any part of this assignment?
+If so, what exactly?   Please note, this was completely acceptable.
+We did not work together at all, as stated above there was a problem with the bfs solver, and I fixed
+it and gave it to him, but that's about all the interaction we have had with each other since
+part 2.
+
+
+
+
+
+B. TEAM INTERACTION
+-------------------
+
+4. I felt that __A______ puzzle was harder then the other.
+
+    A. my
+    B. my teammate's
+    C. neither
+    
+On a scale of:
+
+    1: Strong disagree
+    2: Disagree
+    3. Neutral
+    4. Agree
+    5. Strong Agree
+
+answer the following questions:
+
+5. I contributed to my teammate's puzzle: __5___
+    
+6. My teammate contributed to my puzzle: ___3__
+
+7. If given the chance again, I would want to work with my teammate: _2____
+
+8. Please provide any additional feedback regarding your teammate.
+We went to the cs tutoring center on multiple occasions and he always showed up. However, he is dropping
+SE so I am not sure if he cared about the project as much as I did. I did all of the typing and
+asked most of the questions. He did find a major bug with the solver at the end, and worked on it
+getting the print working on the last day, so I can't complain that much. I think if this was 
+still his major he would have tried harder.
+
+
+
+
+9. What was the best part about being able to work on this project as a team?
+My partner had some good ideas to help finish up code, he caught the error in the buildpath in the solver
+where I had .equals instead of !=, and he fixed the printout alone, so the best part of working in a team
+was having someone to bounce ideas off of and periodically catch my mistakes.
+
+
+
+10. Conversely, what was the worst part about being required to work in a team?
+The worst part of working in a team would be I got the feeling he didn't all that much care about 
+how we did and 
+
+
+
+
+
+C. INDIVIDUAL CONTRIBUTION
+--------------------------
+
+Using the same 1-5 scale, answer the following questions.
+
+11. I contributed to my puzzle: _5____
+
+12. I feel this is a good project to learn about OOP: _3____
+
+13. I personally learned a lot about OOP by doing this project: __3___
+
+14. I think this project was too difficult: __5___
+
+15. The lectures and labs provided adequate background for this project: __3___
+
+16. Please provide any additional feedback you have regarding this project.
+I think this lab should have been split up into two parts, I felt very overwhelmed even though I started
+well before the due date.
